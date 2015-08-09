@@ -1,4 +1,18 @@
 {
+    "name": "tebazil/yii2-console-runner",
+    "description": "Yii2 console command runner that can run without shell_exec() enabled",
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Vasiliy Baukin",
+            "email": "vasiliy.baukin@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tebazil/yii2-console-runner/issues?state=open",
+        "source": "https://github.com/tebazil/yii2-console-runner"
+    },
+
     "require": {
         "yiisoft/yii2": "^2.0"
     },

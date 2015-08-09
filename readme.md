@@ -3,6 +3,8 @@
 Another implementation of Yii2 console command runner. At the time of writing this, it differs from
 [vova07/yii2-console-runner-extension](https://github.com/vova07/yii2-console-runner-extension) and [toriphes/yii2-console-runner] (https://github.com/toriphes/yii2-console-runner) in that it doesn't require shell_exec to be enabled on the server.
 
+Typical usage would be to run `migrate` or other of your console application's commands from web application's controller's action.
+
 ## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
