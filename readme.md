@@ -1,3 +1,7 @@
+#Todo
+* tests
+* release at packagist.org
+
 # Yii2 console command runner
 (currently not tested)
 Another implementation of Yii2 console command runner. At the time of writing this, it differs from
