@@ -54,7 +54,7 @@ On initialization, the runner creates a new console application, then it returns
 The result is that in console commands you have console application's `Yii::$app`, and between the runs `Yii::$app` is your "parent" application, as it was intended.
 
 ##Advanced usage
-You can optionally pass the `$config` (path or array) to the `ConsoleCommandRunner::construct` method, so you can alter console application's configuration on the fly. You might also want to create several runners with different configured applications - each will stick to it's own application, and will respore original `Yii::$app` between runs.
+You can optionally pass the `$config` (path or array) to the `ConsoleCommandRunner::__construct` method, so you can alter console application's configuration on the fly. You might also want to create several runners with different configured applications - each will stick to it's own application, and will respore original `Yii::$app` between runs.
 
 ##Known issues
 Currently only `echo` output can be retrieved with `getOutput`, because standart `ob_start/ob_get_clean` combination is used to capture the output. If output is being written directly to `stdout` or `stderr`, it won't be captured.
