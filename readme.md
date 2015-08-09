@@ -1,4 +1,5 @@
 # Yii2 console command runner
+(currently not tested)
 Another implementation of Yii2 console command runner. At the time of writing this, it differs from
 [vova07/yii2-console-runner-extension](https://github.com/vova07/yii2-console-runner-extension) and [toriphes/yii2-console-runner] (https://github.com/toriphes/yii2-console-runner) in that it doesn't require shell_exec to be enabled on the server.
 
@@ -25,7 +26,7 @@ to the `require` section of your `composer.json` file.
 First you initialize the runner.
 
 ```php
-$runner = \tebazil\yii2\runner\ConsoleCommandRunner();
+$runner = \tebazil\runner\ConsoleCommandRunner();
 ```
 
 Then you run as many commands as you need:
