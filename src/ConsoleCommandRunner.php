@@ -9,13 +9,22 @@ class ConsoleCommandRunner
     private $_output;
     private $_exitCode;
 
-    public function __construct($config = false)
+    public function __construct($config = null)
     {
-        if (!$config) {
+        if (empty($config)) {
             $config = \Yii::getAlias('@app/config/console.php');
         }
-        if (is_string($config)) {
-            $config = require($config);
+
+        if(is_string($config)) {
+            if (!empty($config) && is_file($file = \Yii::getAlias($config))) {
+                $config = require($file);
+            }
+            else
+                throw new \InvalidArgumentException('if $config is a string, it should be a valid yii file path');
+
+        }
+        if(!is_array($config)) {
+            throw new \InvalidArgumentException('$config should either be a string (path) or array');
         }
         // fcgi doesn't have STDIN and STDOUT defined by default
         defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));

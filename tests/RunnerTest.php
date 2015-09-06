@@ -11,6 +11,7 @@ namespace tests;
 
 use tebazil\runner\ConsoleCommandRunner;
 use Yii;
+use yii\base\Object;
 
 class RunnerTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,5 +28,15 @@ class RunnerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($runner->getOutput(),INNER_APPLICATION_ID);
         $this->assertEquals($runner->getExitCode(),TEST_EXIT_CODE);
+    }
+
+    public function testConfigObject() {
+        $this->setExpectedException('InvalidArgumentException');
+        new ConsoleCommandRunner(new Object());
+    }
+
+    public function testConfigNonexistentPath() {
+        $this->setExpectedException('InvalidArgumentException');
+            new ConsoleCommandRunner('asdfsdfsadf');
     }
 }
