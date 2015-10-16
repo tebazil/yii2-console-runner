@@ -12,7 +12,13 @@ class ConsoleCommandRunner
     public function __construct($config = null)
     {
         if (is_null($config)) {
-            $config = \Yii::getAlias('@app/config/console.php');
+            $config = '@app/config/console.php';
+            if(!is_file(\Yii::getAlias($config))) {
+                $config = '@common/config/console.php';
+            }
+            if(!is_file(\Yii::getAlias($config))) {
+                throw new \InvalidArgumentException('Config was not provided; and was not detected in common paths of basic and advanced templates');
+            }
         }
 
         if(is_string($config)) {
