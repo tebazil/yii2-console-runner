@@ -28,7 +28,7 @@ to the `require` section of your `composer.json` file.
 First you initialize the runner.
 
 ```php
-$runner = \tebazil\runner\ConsoleCommandRunner();
+$runner = new \tebazil\runner\ConsoleCommandRunner();
 ```
 
 Then you run as many commands as you need:
